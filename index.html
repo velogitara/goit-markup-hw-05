@@ -69,7 +69,7 @@
                         Эффективные решения<br />
                         для вашего бизнеса
                     </h1>
-                    <button type="button" class="btn">Заказать услугу</button>
+                    <button type="button" class="btn" data-modal-open>Заказать услугу</button>
                 </div>
             </section>
             <!-- <h2>Что мы делаем</h2> -->
@@ -136,17 +136,26 @@
                     <h2 class="section-title">Чем мы занимаемся</h2>
                     <ul class="preview-ul list">
                         <li>
-                            <img src="./images/box1.jpg" alt="набирает код" width="370" />
+                            <div class="preview-thumb">
+                                <img src="./images/box1.jpg" alt="набирает код" width="370" />
+                                <div class="thumb-description"><p>Десктопные приложения</p></div>
+                            </div>
                         </li>
                         <li>
-                            <img
-                                src="./images/box2.jpg"
-                                alt=" делает оптимизацию к мобильным устройствам"
-                                width="370"
-                            />
+                            <div class="preview-thumb">
+                                <img
+                                    src="./images/box2.jpg"
+                                    alt=" делает оптимизацию к мобильным устройствам"
+                                    width="370"
+                                />
+                                <div class="thumb-description"><p>Мобильные приложения</p></div>
+                            </div>
                         </li>
                         <li>
-                            <img src="./images/box3.jpg" alt="выбор цветовой гаммы" />
+                            <div class="preview-thumb">
+                                <img src="./images/box3.jpg" alt="выбор цветовой гаммы" />
+                                <div class="thumb-description"><p>Дизайнерские решения</p></div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -435,5 +444,15 @@
                 </div>
             </div>
         </footer>
+        <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+                <button class="close-btn" data-modal-close>
+                    <svg class="close-btn-svg" width="11" height="11">
+                        <use href="./images/sprite.svg#icon-close-btn"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <script src="./js/modal.js"></script>
     </body>
 </html>
