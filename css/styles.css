@@ -713,7 +713,8 @@
     border: none;
     background-color: var(--secondary-bcg-color);
 
-    transition: background-color 250ms var(--cubic), color 250ms var(--cubic);
+    transition: background-color 250ms var(--cubic), color 250ms var(--cubic),
+        box-shadow 250ms var(--cubic);
 }
 .button-filter-list li:not(:last-child) {
     margin-right: 8px;
@@ -747,6 +748,8 @@
     flex-basis: calc(100% / 3 - var(--card-set-gap));
     margin-top: var(--card-set-gap);
     margin-left: var(--card-set-gap);
+
+    transition: box-shadow 250ms var(--cubic);
 }
 .list-element:focus,
 .list-element:hover {
