@@ -895,6 +895,8 @@
     border-radius: 50%;
     border: 1px solid var(--icon-silent-color);
     background-color: var(--white-color);
+
+    transition: fill 250ms var(--cubic);
 }
 .close-btn:hover,
 .close-btn:focus {
