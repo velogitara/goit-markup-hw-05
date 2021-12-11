@@ -21,6 +21,7 @@ html {
     --focus-color: #2196f3;
     --card-set-gap: 30px;
     --icon-silent-color: #afb1b8;
+    --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -42,6 +43,8 @@ a {
 
 button {
     font-family: inherit;
+    /* border: none; */
+    outline-style: none;
 }
 
 h1,

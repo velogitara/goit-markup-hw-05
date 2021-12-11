@@ -64,6 +64,8 @@
     outline: none;
     padding-top: 32px;
     padding-bottom: 32px;
+
+    transition: color 250ms var(--cubic);
 }
 .current::after {
     content: '';
@@ -212,6 +214,8 @@
     font-size: 16px;
     line-height: 1.875;
     letter-spacing: 0.06em;
+
+    transition: background-color 250ms var(--cubic);
 }
 .btn:hover,
 .btn:focus,
@@ -396,6 +400,8 @@
     /* outline: 1px solid tomato; */
     background-position: center;
     background-repeat: no-repeat;
+
+    transition: background-color 250ms var(--cubic);
 }
 .social-links:hover,
 .social-links:focus {
@@ -404,6 +410,7 @@
 
 .icon {
     fill: var(--icon-silent-color);
+    transition: fill 250ms var(--cubic);
 }
 
 .social-links:hover .icon,
@@ -450,11 +457,15 @@
     width: 170px;
     border: 1px solid #afb1b8;
     border-radius: 4px;
+
+    transition: border-color 250ms var(--cubic);
 }
 
 .clients-links-svg {
     fill: var(--icon-silent-color);
+    transition: fill 250ms var(--cubic);
 }
+
 .clients-links:hover,
 .clients-links:focus {
     border-color: var(--active-color);
@@ -521,19 +532,17 @@
     color: var(--white-color);
     text-decoration: none;
     outline: none;
+
+    transition: color 250ms var(--cubic);
 }
+
+.current-address:focus,
+.current-address:active,
 .current-address:hover {
     color: var(--active-color);
     background-color: inherit;
 }
-.current-address:focus {
-    color: var(--active-color);
-    background-color: inherit;
-}
-.current-address:active {
-    color: var(--active-color);
-    background-color: inherit;
-}
+
 .address-section {
     color: var(--secondary-text-color);
     text-decoration: none;
@@ -542,6 +551,8 @@
     font-size: 14px;
     line-height: 1.142;
     letter-spacing: 0.02em;
+
+    transition: color 250ms var(--cubic);
 }
 
 .address-section:hover,
@@ -583,6 +594,8 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
+
+    transition: background-color 250ms var(--cubic);
 }
 
 .icon-footer {
@@ -612,6 +625,60 @@
 .footer-section-links.linkedin {
     background-image: url('../images/linkedin-footer.svg');
 } */
+
+.button-subscribe {
+    position: relative;
+    padding: 10px 28px;
+    margin-left: 93px;
+    display: flex;
+    align-items: center;
+
+    color: var(--white-color);
+    background-color: var(--active-color);
+
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.875;
+    letter-spacing: 0.06em;
+
+    overflow: hidden;
+
+    transition: background-color 250ms var(--cubic), box-shadow 250ms var(--cubic);
+}
+.button-subscribe:hover,
+.button-subscribe:active {
+    background: #188ce8;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.15);
+}
+
+.icon-send {
+    fill: var(--white-color);
+    margin-left: 10px;
+    transition: transform 500ms var(--cubic);
+}
+.button-subscribe:hover .icon-send {
+    transform: translateY(-40px);
+}
+.button-subscribe::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    right: 28px;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/icon-send.svg);
+    transform: translateY(calc(-50% + 40px));
+    transition: transform 500ms var(--cubic);
+}
+.button-subscribe:hover::after {
+    transform: translateY(-50%);
+}
 /* ======================footer section ends====================== */
 
 /* ========================= portfolio starts ========================= */
@@ -644,6 +711,9 @@
     padding: 6px 22px;
     border-radius: 4px;
     border: none;
+    background-color: var(--secondary-bcg-color);
+
+    transition: background-color 250ms var(--cubic), color 250ms var(--cubic);
 }
 .button-filter-list li:not(:last-child) {
     margin-right: 8px;
@@ -728,6 +798,7 @@
 
 .list-element-thumb {
     position: relative;
+    overflow: hidden;
 }
 
 .thumb-list-description {
@@ -742,15 +813,27 @@
     height: 100%;
     top: 0;
     left: 0;
-    opacity: 0;
-}
-.thumb-list-description > p {
-    color: var(--white-color);
+
+    transform: translateY(100%);
+    transition: transform 250ms var(--cubic);
 }
 
 .list-element:hover .thumb-list-description {
+    transform: translateY(0);
+}
+
+.thumb-list-description > p {
+    color: var(--white-color);
+    opacity: 0;
+    transition: opacity 500ms var(--cubic);
+}
+
+.list-element:hover .thumb-list-description > p {
     opacity: 1;
 }
+/* .filter-list-img {
+    z-index: 10;
+} */
 
 /* ========================= portfolio ends ========================= */
 
@@ -763,17 +846,23 @@
     left: 0;
     width: 100%;
     height: 100%;
+    opacity: 1;
+
+    transition: opacity 1000ms var(--cubic);
 }
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(1.1) perspective(400px) rotateX(-90deg);
+}
+
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
 
     width: 528px;
     height: 581px;
@@ -782,6 +871,9 @@
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 1000ms var(--cubic), rotate 1000ms var(--cubic) 500ms;
 }
 
 .close-btn {
@@ -789,6 +881,10 @@
     position: absolute;
     top: 8px;
     right: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     width: 30px;
     height: 30px;
